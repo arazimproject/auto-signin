@@ -1,0 +1,27 @@
+{
+    "name": "Auto Sign-In",
+    "description": "Automatically fill in the ID in TAU moodle sign-in",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "icon/icon-16.png",
+        "32": "icon/icon-32.png",
+        "48": "icon/icon-48.png",
+        "128": "icon/icon-128.png"
+    },
+    "host_permissions": ["https://nidp.tau.ac.il/nidp/saml2/*"],
+    "content_scripts": [
+        {
+            "matches": ["https://nidp.tau.ac.il/nidp/saml2/*"],
+            "js": ["nidp.js"]
+        },
+        {
+            "matches": ["https://www.ims.tau.ac.il/Tal/"],
+            "js": ["ims.js"]
+        },
+        {
+            "matches": ["https://moodle.tau.ac.il/*"],
+            "js": ["moodle.js"]
+        }
+    ]
+}
