@@ -9,14 +9,19 @@
         "48": "icon/icon-48.png",
         "128": "icon/icon-128.png"
     },
-    "host_permissions": ["https://nidp.tau.ac.il/nidp/saml2/*"],
+    "host_permissions": ["https://nidp.tau.ac.il/nidp/*"],
     "content_scripts": [
         {
-            "matches": ["https://nidp.tau.ac.il/nidp/saml2/*"],
+            "matches": ["https://nidp.tau.ac.il/nidp/*"],
             "js": ["nidp.js"]
         },
         {
-            "matches": ["https://www.ims.tau.ac.il/Tal/"],
+            "matches": [
+                "https://www.ims.tau.ac.il/Tal/",
+                "https://www.ims.tau.ac.il/Ac/",
+                "https://iims.tau.ac.il/Tal/",
+                "https://iims.tau.ac.il/Ac/"
+            ],
             "js": ["ims.js"]
         },
         {
